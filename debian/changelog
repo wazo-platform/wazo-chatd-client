@@ -1,0 +1,5 @@
+wazo-chatd-client (1.0-1) wazo-dev-stretch; urgency=medium
+
+  * Initial release.
+
+ -- Wazo Maintainers <dev+pkg@wazo.community>  Tue, 15 Jan 2019 11:11:32 -0500
