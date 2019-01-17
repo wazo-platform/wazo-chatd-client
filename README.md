@@ -18,3 +18,9 @@ client = Client('localhost', verify_certificate=False, token=<auth-token>)
 ```python
 client.config.get()
 ```
+
+### Get the current status of wazo-chatd
+
+```python
+client.status.get()
+```

@@ -3,7 +3,6 @@
 # Copyright 2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
 from setuptools import setup
 from setuptools import find_packages
 
@@ -23,6 +22,7 @@ setup(
     entry_points={
         'wazo_chatd_client.commands': [
             'config = wazo_chatd_client.commands.config:ConfigCommand',
+            'status = wazo_chatd_client.commands.status:StatusCommand',
         ],
     }
 )
