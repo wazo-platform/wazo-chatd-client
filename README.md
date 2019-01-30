@@ -30,3 +30,9 @@ client.status.get()
 ```python
 client.user_presences.list()
 ```
+
+### Get a user presence
+
+```python
+client.user_presences.get(<user_uuid>)
+```
