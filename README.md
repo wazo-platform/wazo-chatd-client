@@ -24,3 +24,9 @@ client.config.get()
 ```python
 client.status.get()
 ```
+
+### List all user presences
+
+```python
+client.user_presences.list()
+```
