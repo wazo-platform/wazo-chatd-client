@@ -36,3 +36,9 @@ client.user_presences.list()
 ```python
 client.user_presences.get(<user_uuid>)
 ```
+
+### Update a user presence
+
+```python
+client.user_presences.update(user_args)
+```
