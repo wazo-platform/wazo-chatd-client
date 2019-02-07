@@ -28,4 +28,3 @@ class UserPresenceCommand(BaseCommand):
         url = '{base}/{uuid}/presences'.format(base=self.base_url, uuid=user_uuid)
         r = self.session.put(url, json=user_args, headers=headers)
         self.raise_from_response(r)
-        return r.json()
