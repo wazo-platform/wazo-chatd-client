@@ -22,6 +22,7 @@ setup(
     entry_points={
         'wazo_chatd_client.commands': [
             'config = wazo_chatd_client.commands.config:ConfigCommand',
+            'user_presences = wazo_chatd_client.commands.user_presences:UserPresenceCommand',
             'status = wazo_chatd_client.commands.status:StatusCommand',
         ],
     }

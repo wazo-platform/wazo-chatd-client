@@ -24,3 +24,21 @@ client.config.get()
 ```python
 client.status.get()
 ```
+
+### List all user presences
+
+```python
+client.user_presences.list()
+```
+
+### Get a user presence
+
+```python
+client.user_presences.get(<user_uuid>)
+```
+
+### Update a user presence
+
+```python
+client.user_presences.update(user_args)
+```
