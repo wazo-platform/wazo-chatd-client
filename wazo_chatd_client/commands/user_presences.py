@@ -10,6 +10,9 @@ class UserPresenceCommand(BaseCommand):
 
     def list(self, **params):
         headers = self._get_headers(**params)
+        if 'user_uuids' in params:
+            params['user_uuid'] = ','.join(params.pop('user_uuids'))
+
         url = '{base}/presences'.format(base=self.base_url)
         r = self.session.get(url, headers=headers, params=params)
         self.raise_from_response(r)
