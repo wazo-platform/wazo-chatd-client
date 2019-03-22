@@ -42,3 +42,27 @@ client.user_presences.get(<user_uuid>)
 ```python
 client.user_presences.update(user_args)
 ```
+
+### Create user room
+
+```python
+client.rooms.create_from_user(room_args)
+```
+
+### List user room
+
+```python
+client.rooms.list_from_user()
+```
+
+### Create user room message
+
+```python
+client.rooms.create_message_from_user()
+```
+
+### List user room message
+
+```python
+client.rooms.list_messages_from_user()
+```
