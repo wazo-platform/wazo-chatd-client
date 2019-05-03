@@ -35,3 +35,10 @@ class RoomCommand(BaseCommand):
         r = self.session.post(url, json=message_args, headers=headers)
         self.raise_from_response(r)
         return r.json()
+
+    def search_messages_from_user(self, **params):
+        headers = self._get_headers()
+        url = '{base}/messages'.format(base=self.base_url)
+        r = self.session.get(url, headers=headers, params=params)
+        self.raise_from_response(r)
+        return r.json()

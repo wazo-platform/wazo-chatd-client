@@ -61,8 +61,14 @@ client.rooms.list_from_user()
 client.rooms.create_message_from_user()
 ```
 
-### List user room message
+### List user room messages
 
 ```python
 client.rooms.list_messages_from_user()
+```
+
+### Search user messages
+
+```python
+client.rooms.search_messages_from_user(search='found')
 ```
