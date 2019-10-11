@@ -2,7 +2,7 @@
 # Copyright 2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from xivo_lib_rest_client.client import BaseClient
+from wazo_lib_rest_client.client import BaseClient
 
 
 class ChatdClient(BaseClient):
@@ -18,5 +18,5 @@ class ChatdClient(BaseClient):
             host=host,
             port=port,
             version=version,
-            **kwargs,
+            **kwargs
         )
