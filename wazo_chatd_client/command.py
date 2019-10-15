@@ -2,7 +2,7 @@
 # Copyright 2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from xivo_lib_rest_client.command import RESTCommand
+from wazo_lib_rest_client.command import RESTCommand
 
 from .exceptions import ChatdError
 from .exceptions import ChatdServiceUnavailable
