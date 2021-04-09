@@ -72,3 +72,4 @@ client.rooms.list_messages_from_user()
 ```python
 client.rooms.search_messages_from_user(search='found')
 ```
+
