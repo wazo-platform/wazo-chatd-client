@@ -2,10 +2,10 @@
 # Copyright 2019 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from wazo_lib_rest_client import RESTCommand
+from .helpers.base import BaseCommand
 
 
-class ConfigCommand(RESTCommand):
+class ConfigCommand(BaseCommand):
 
     resource = 'config'
     _headers = {'Accept': 'application/json'}
