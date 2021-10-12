@@ -8,9 +8,9 @@ from .helpers.base import BaseCommand
 class ConfigCommand(BaseCommand):
 
     resource = 'config'
-    _headers = {'Accept': 'application/json'}
 
     def get(self):
-        r = self.session.get(self.base_url, headers=self._headers)
+        headers = self._get_headers()
+        r = self.session.get(self.base_url, headers=headers)
         self.raise_from_response(r)
         return r.json()
