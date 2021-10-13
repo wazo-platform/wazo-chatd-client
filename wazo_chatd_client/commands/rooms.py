@@ -16,7 +16,7 @@ class RoomCommand(BaseCommand):
         return r.json()
 
     def create_from_user(self, room_args):
-        headers = self._get_headers(write=True)
+        headers = self._get_headers()
         url = '{base}'.format(base=self.base_url)
         r = self.session.post(url, json=room_args, headers=headers)
         self.raise_from_response(r)
@@ -32,7 +32,7 @@ class RoomCommand(BaseCommand):
         return r.json()
 
     def create_message_from_user(self, room_uuid, message_args):
-        headers = self._get_headers(write=True)
+        headers = self._get_headers()
         url = '{base}/{room_uuid}/messages'.format(
             room_uuid=room_uuid, base=self.base_url
         )
