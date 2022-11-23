@@ -1,4 +1,4 @@
-# Copyright 2019-2021 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2019-2022 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .helpers.base import BaseCommand
@@ -10,6 +10,8 @@ class RoomCommand(BaseCommand):
 
     def list_from_user(self, **params):
         headers = self._get_headers()
+        if 'user_uuids' in params:
+            params['user_uuid'] = ','.join(params.pop('user_uuids'))
         url = '{base}'.format(base=self.base_url)
         r = self.session.get(url, headers=headers, params=params)
         self.raise_from_response(r)
