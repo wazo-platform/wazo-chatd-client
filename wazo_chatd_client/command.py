@@ -1,11 +1,9 @@
-# Copyright 2019-2022 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2019-2023 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from wazo_lib_rest_client.command import RESTCommand
 
-from .exceptions import ChatdError
-from .exceptions import ChatdServiceUnavailable
-from .exceptions import InvalidChatdError
+from .exceptions import ChatdError, ChatdServiceUnavailable, InvalidChatdError
 
 
 class ChatdCommand(RESTCommand):
