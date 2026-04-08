@@ -1,4 +1,4 @@
-# Copyright 2019-2023 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2019-2026 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from .helpers.base import BaseCommand
@@ -34,6 +34,13 @@ class RoomCommand(BaseCommand):
         headers = self._get_headers()
         url = f'{self.base_url}/{room_uuid}/messages'
         r = self.session.post(url, json=message_args, headers=headers)
+        self.raise_from_response(r)
+        return r.json()
+
+    def list_available_identities_from_user(self, room_uuid):
+        headers = self._get_headers()
+        url = f'{self.base_url}/{room_uuid}/identities'
+        r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.json()
 
