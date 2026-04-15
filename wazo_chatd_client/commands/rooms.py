@@ -37,13 +37,6 @@ class RoomCommand(BaseCommand):
         self.raise_from_response(r)
         return r.json()
 
-    def list_available_identities_from_user(self, room_uuid):
-        headers = self._get_headers()
-        url = f'{self.base_url}/{room_uuid}/identities'
-        r = self.session.get(url, headers=headers)
-        self.raise_from_response(r)
-        return r.json()
-
     def search_messages_from_user(self, **params):
         headers = self._get_headers()
         url = f'{self.base_url}/messages'
