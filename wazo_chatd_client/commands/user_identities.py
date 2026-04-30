@@ -14,12 +14,9 @@ class UserIdentityCommand(BaseCommand):
         self.raise_from_response(r)
         return r.json()
 
-    def list_from_user(self, room_uuid=None):
+    def list_from_user(self, **params):
         headers = self._get_headers()
         url = f'{self.base_url}/me/identities'
-        params = {}
-        if room_uuid:
-            params['room_uuid'] = str(room_uuid)
         r = self.session.get(url, headers=headers, params=params)
         self.raise_from_response(r)
         return r.json()
@@ -43,6 +40,7 @@ class UserIdentityCommand(BaseCommand):
         url = f'{self.base_url}/{user_uuid}/identities/{identity_uuid}'
         r = self.session.put(url, json=identity_args, headers=headers)
         self.raise_from_response(r)
+        return r.json()
 
     def delete(self, user_uuid, identity_uuid, tenant_uuid=None):
         headers = self._get_headers(tenant_uuid=tenant_uuid)
