@@ -19,7 +19,6 @@ setup(
             'status = wazo_chatd_client.commands.status:StatusCommand',
             'user_presences = wazo_chatd_client.commands.user_presences:UserPresenceCommand',
             'identities = wazo_chatd_client.commands.identities:IdentityCommand',
-            'user_identities = wazo_chatd_client.commands.user_identities:UserIdentityCommand',
         ],
     },
 )

@@ -38,3 +38,10 @@ class IdentityCommand(BaseCommand):
         url = f'{self.base_url}/{identity_uuid}'
         r = self.session.delete(url, headers=headers)
         self.raise_from_response(r)
+
+    def list_from_user(self, **params):
+        headers = self._get_headers()
+        url = self._client.url('users', 'me', 'identities')
+        r = self.session.get(url, headers=headers, params=params)
+        self.raise_from_response(r)
+        return r.json()
