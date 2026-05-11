@@ -79,6 +79,12 @@ client.rooms.search_messages_from_user(search='found')
 client.connectors.list(tenant_uuid=<tenant_uuid>)
 ```
 
+### List a connector's provider-reported inventory with binding state
+
+```python
+client.connectors.inventory(<backend>, tenant_uuid=<tenant_uuid>)
+```
+
 ### List all identities in the tenant
 
 ```python
