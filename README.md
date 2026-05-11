@@ -73,6 +73,12 @@ client.rooms.list_messages_from_user()
 client.rooms.search_messages_from_user(search='found')
 ```
 
+### List registered connectors and their tenant-configured state
+
+```python
+client.connectors.list(tenant_uuid=<tenant_uuid>)
+```
+
 ### List all identities in the tenant
 
 ```python
