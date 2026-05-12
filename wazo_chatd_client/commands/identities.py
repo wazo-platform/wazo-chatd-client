@@ -7,9 +7,9 @@ from .helpers.base import BaseCommand
 class IdentityCommand(BaseCommand):
     resource = 'identities'
 
-    def list(self, tenant_uuid=None):
+    def list(self, tenant_uuid=None, **params):
         headers = self._get_headers(tenant_uuid=tenant_uuid)
-        r = self.session.get(self.base_url, headers=headers)
+        r = self.session.get(self.base_url, headers=headers, params=params)
         self.raise_from_response(r)
         return r.json()
 
