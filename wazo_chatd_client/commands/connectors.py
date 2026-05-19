@@ -13,9 +13,9 @@ class ConnectorCommand(BaseCommand):
         self.raise_from_response(r)
         return r.json()
 
-    def inventory(self, backend, tenant_uuid=None):
+    def identities(self, backend, tenant_uuid=None):
         headers = self._get_headers(tenant_uuid=tenant_uuid)
-        url = f'{self.base_url}/{backend}/inventory'
+        url = f'{self.base_url}/{backend}/identities'
         r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.json()
