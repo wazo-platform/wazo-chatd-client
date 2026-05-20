@@ -106,6 +106,7 @@ client.identities.create(
         'backend': <backend>,
         'type': <type>,
         'identity': <identity>,
+        'extra': {<key>: <value>, ...},  # optional admin-only metadata
     },
     tenant_uuid=<tenant_uuid>,
 )
@@ -116,7 +117,7 @@ client.identities.create(
 ```python
 client.identities.update(
     <identity_uuid>,
-    {'identity': <new_identity>},  # or {'user_uuid': <new_user_uuid>} to reassign
+    {'identity': <new_identity>, 'extra': {<key>: <value>, ...}},
     tenant_uuid=<tenant_uuid>,
 )
 ```
