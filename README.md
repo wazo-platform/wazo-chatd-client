@@ -72,3 +72,64 @@ client.rooms.list_messages_from_user()
 ```python
 client.rooms.search_messages_from_user(search='found')
 ```
+
+### List registered connectors and their tenant-configured state
+
+```python
+client.connectors.list(tenant_uuid=<tenant_uuid>)
+```
+
+### List a connector's provider-reported inventory with binding state
+
+```python
+client.connectors.inventory(<backend>, tenant_uuid=<tenant_uuid>)
+```
+
+### List all identities in the tenant
+
+```python
+client.identities.list(tenant_uuid=<tenant_uuid>)
+```
+
+### Get an identity by UUID
+
+```python
+client.identities.get(<identity_uuid>, tenant_uuid=<tenant_uuid>)
+```
+
+### Create an identity
+
+```python
+client.identities.create(
+    {
+        'user_uuid': <user_uuid>,
+        'backend': <backend>,
+        'type': <type>,
+        'identity': <identity>,
+        'extra': {<key>: <value>, ...},  # optional admin-only metadata
+    },
+    tenant_uuid=<tenant_uuid>,
+)
+```
+
+### Update an identity
+
+```python
+client.identities.update(
+    <identity_uuid>,
+    {'identity': <new_identity>, 'extra': {<key>: <value>, ...}},
+    tenant_uuid=<tenant_uuid>,
+)
+```
+
+### Delete an identity
+
+```python
+client.identities.delete(<identity_uuid>, tenant_uuid=<tenant_uuid>)
+```
+
+### List the authenticated user's own identities
+
+```python
+client.identities.list_from_user()
+```
