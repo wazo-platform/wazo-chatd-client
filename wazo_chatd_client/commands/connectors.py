@@ -19,3 +19,10 @@ class ConnectorCommand(BaseCommand):
         r = self.session.get(url, headers=headers)
         self.raise_from_response(r)
         return r.json()
+
+    def auth_schema(self, backend, tenant_uuid=None):
+        headers = self._get_headers(tenant_uuid=tenant_uuid)
+        url = f'{self.base_url}/{backend}/auth-schema'
+        r = self.session.get(url, headers=headers)
+        self.raise_from_response(r)
+        return r.json()
