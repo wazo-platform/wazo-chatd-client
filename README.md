@@ -79,10 +79,16 @@ client.rooms.search_messages_from_user(search='found')
 client.connectors.list(tenant_uuid=<tenant_uuid>)
 ```
 
-### List a connector's provider-reported inventory with binding state
+### List a connector's provider-reported identities with binding state
 
 ```python
-client.connectors.inventory(<backend>, tenant_uuid=<tenant_uuid>)
+client.connectors.identities(<backend>, tenant_uuid=<tenant_uuid>)
+```
+
+### Get a connector's credential schema
+
+```python
+client.connectors.auth_schema(<backend>, tenant_uuid=<tenant_uuid>)
 ```
 
 ### List all identities in the tenant
